@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-struct node{
+struct node
+{
     int data;
-    struct node * next;
+    struct node *next;
 };
-typedef struct node * NODE;
+typedef struct node *NODE;
 NODE head = NULL, tail = NULL;
 int kill(int k)
 {
@@ -27,7 +28,8 @@ int kill(int k)
     }
     return head->data;
 }
-void createList(int n){
+void createList(int n)
+{
     for (int i = 1; i <= n; i++)
     {
         NODE newnode = (NODE)malloc(sizeof(struct node));
@@ -53,9 +55,9 @@ int main()
 {
     int n, k;
     printf("The number of prisoners: ");
-	scanf("%d",&n);
-	printf("The number of prisoners to be skipped: ");
-	scanf("%d",&k);
+    scanf("%d", &n);
+    printf("The number of prisoners to be skipped: ");
+    scanf("%d", &k);
     printf("The safe place is %d", josephus(n, k));
     return 0;
 }
